@@ -90,12 +90,15 @@ export default {
             console.log(response.data.msg);
           }
           else{
+            console.log('eh');
             let username = response.data.user.username
             let token = response.headers['x-auth']
             this.$store.commit("setUser", {
               username,
               token
             });
+            jQuery('#login-modal').modal('hide')
+            this.$store.dispatch('setMsg',`Logged in ${username}`)
           }
         })
         .catch(e => console.log(e));

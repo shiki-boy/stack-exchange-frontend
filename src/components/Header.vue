@@ -70,6 +70,7 @@ export default {
       auth2.signOut().then(()=> {
         console.log("User signed out.");
         this.$store.commit("logOutUser");
+        this.$store.dispatch('setMsg',"Logged Out ")
       });
     }
   },
