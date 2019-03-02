@@ -10,11 +10,15 @@ export const store = new Vuex.Store({
       token:null,
       isAuth:false,
       username:null
-    }
+    },
+    msg:null
   },
   getters:{
     isAuth:state=>{
       return state.user.isAuth
+    },
+    getToken:state=>{
+      return state.user.token
     }
   },
   mutations:{
@@ -33,12 +37,18 @@ export const store = new Vuex.Store({
       localStorage.removeItem('token')
       localStorage.removeItem('username')
       localStorage.removeItem('expiresIn')
-    }
+    },
+    setMsg:(state,payload)=>state.msg = payload,
+    resetMsg:(state)=>state.msg = null
   },
   actions:{
-    setUser:context => {
-      context.commit('setUser')
+    setUser:(context,payload) => {
+      context.commit('setUser',payload)
     },
+    setMsg:(context,msg) => {
+      context.commit('setMsg',msg)
+    },
+    resetMsg:(context)=>{context.commit('resetMsg')}, 
     tryAutoLogin:context=>{
       console.log('running');
       let now = new Date()

@@ -1,6 +1,6 @@
 <template>
   <div class="two wide column" style="text-align:center;">
-    <button class="circular ui icon inverted purple button">
+    <button class="circular ui icon inverted purple button" @click="$emit('upvote')">
       <i class="arrow up icon"></i>
     </button>
     <div class="ui tiny statistic">
@@ -15,6 +15,6 @@
 
 <script>
 export default {
-  props:["votes"]
+  props:["votes"],
 };
 </script>
