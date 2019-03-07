@@ -7,43 +7,49 @@ import AskForm from './components/Ask/AskForm'
 import Question from './components/Questions/Question.vue'
 // import TagsInfo from './components/rightinfo/TagsInfo.vue'
 
-export const routes = [
-    {   path:'/home',
-        components:{
-            default:Home,
-            'info-section':HomeInfo
-            }
-    },
-    {   path:'/questions', 
-        components:{
-            default:Questions,
-            'info-section':QuestionsInfo
-        }
-    },
-    {   path:'/question/:id', 
-        components:{
-            default:Question,
-            'info-section':QuestionsInfo
-        }
-    },
-    {
-        path:'/tags',
-        components:{
-            // default:Tags,
-            'tags-view':Tags
-        }        
-    },
-    {
-        path:'/tags/:id',
-        components:{
-            default:Questions,
-            // 'tags-view':Tags
-        }        
-    },
-    {
-        path:'/ask',
-        components:{
-            'ask-view':AskForm
-        }        
+export const routes = [{
+    path: '/home',
+    components: {
+      default: Home,
+      'info-section': HomeInfo
     }
+  },
+  {
+    path: '/questions',
+    components: {
+      default: Questions,
+      'info-section': QuestionsInfo
+    }
+  },
+  {
+    path: '/question/:id',
+    components: {
+      default: Question,
+      'info-section': QuestionsInfo
+    }
+  },
+  {
+    path: '/tags',
+    components: {
+      // default:Tags,
+      'tags-view': Tags
+    }
+  },
+  {
+    path: '/tags/:id',
+    components: {
+      default: Questions,
+      // 'tags-view':Tags
+    }
+  },
+  {
+    path: '/ask',
+    components: {
+      'ask-view': AskForm
+    }
+  },
+  {
+    path: '',
+    redirect: '/home'
+  }
 ]
