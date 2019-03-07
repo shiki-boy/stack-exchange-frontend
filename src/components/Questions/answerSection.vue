@@ -34,7 +34,7 @@ export default {
       Api().patch(`upvote/${id}`,null,{headers})
       .then(response => {
         console.log(response.data)
-        this.$store.dispatch('setMsg',"Upvoted !")
+        this.$store.dispatch('setMsg',response.data)
       }).catch(e=>{
         this.$store.dispatch('setMsg',"Not logged in")
       })

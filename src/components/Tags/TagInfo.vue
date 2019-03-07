@@ -1,6 +1,6 @@
 <template>
   <div class="_space">
-    <router-link to class="ui large teal label">{{tag.tag}}
+    <router-link :to="'/tags/'+tag._id+'/5'" class="ui large teal label">{{tag.tag}}
       <div class="detail">{{tag.countQ}}</div>
     </router-link >
   </div>

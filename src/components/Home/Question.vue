@@ -17,7 +17,7 @@
         <router-link :to="'/question/'+question._id" tag="a" class="meta">{{question.q_h}}</router-link>
         <br>
         <br>
-        <p class="_time">Asked {{question.date | date}}</p>
+        <p class="_time">Asked {{question.createdAt | date}}</p>
       </div>
     </div>
     

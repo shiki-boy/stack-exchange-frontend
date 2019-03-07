@@ -34,6 +34,13 @@ export const routes = [
         }        
     },
     {
+        path:'/tags/:id',
+        components:{
+            default:Questions,
+            // 'tags-view':Tags
+        }        
+    },
+    {
         path:'/ask',
         components:{
             'ask-view':AskForm
